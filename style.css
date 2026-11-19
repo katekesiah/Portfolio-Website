@@ -1,283 +1,309 @@
 
-/* =================================
-   ART SAMPLES & COMMISSION PAGES
-================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-.page-body {
-    background: var(--white) !important;
-    background-image: none !important;
-    color: var(--text);
-    min-height: 100vh;
+/* COLOR PALETTE */
+:root {
+    --pink: #F4A6C1;
+    --light-pink: #FCE4EC;
+    --white: #FFF9F4;
+    --orange: #FFB36B;
+    --yellow: #FFE69A;
+    --text: #49353A;
+    --dark-pink: #D9789C;
 }
 
-/* PAGE CONTAINER */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
 
-.page-container {
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
     width: 100%;
     min-height: 100vh;
-    padding: 14rem 9% 5rem;
-}
-
-/* PAGE HEADING */
-
-.page-heading {
-    text-align: center;
-    margin-bottom: 5rem;
-}
-
-.page-heading h1 {
-    font-size: 4.5rem;
+    overflow-x: hidden;
+    background-color: var(--white);
     color: var(--text);
-    margin-bottom: 1rem;
 }
 
-.page-heading h1 span {
+/* HEADER */
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--dark-pink);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* NAVIGATION */
+
+nav a {
+    font-size: 1.8rem;
+    color: var(--text);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--dark-pink);
+    border-bottom: 3px solid var(--orange);
+}
+
+/* MENU ICON */
+
+
+/* MENU ICON */
+
+#menu-icon {
+    font-size: 3rem;
+    color: var(--dark-pink);
+    cursor: pointer;
+    display: none;
+}
+
+/* RESPONSIVE NAVIGATION */
+
+@media (max-width: 1100px) {
+
+    #menu-icon {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        display: none;
+        top: 100%;
+        right: 9%;
+        width: 280px;
+        border: 2px solid var(--pink);
+        border-radius: 1.5rem;
+        padding: 1rem 2rem;
+        background-color: var(--light-pink);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        font-size: 1.8rem;
+        margin: 2rem 0;
+        color: var(--text);
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: var(--dark-pink);
+        border-bottom: 2px solid var(--orange);
+    }
+}
+
+/* HOME SECTION */
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: var(--white);
+}
+
+.home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
     color: var(--dark-pink);
 }
 
-.page-heading p {
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+/* PROFILE IMAGE */
+
+.home-img {
+    border-radius: 50%;
+    padding: 1rem;
+    background: linear-gradient(
+        135deg,
+        var(--pink),
+        var(--orange),
+        var(--yellow)
+    );
+}
+
+.home-img img {
+    position: relative;
+    display: block;
+    width: 32vw;
+    border-radius: 50%;
+    border: 5px solid var(--white);
+    box-shadow: 0 0 20px rgba(244, 166, 193, 0.4);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.home-img img:hover {
+    transform: scale(1.03);
+}
+
+/* SOCIAL ICONS */
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--light-pink);
+    border: 0.2rem solid var(--pink);
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: var(--dark-pink);
+}
+
+.social-icons a:hover {
+    color: var(--white);
+    transform: scale(1.3) translateY(-5px);
+    background-color: var(--orange);
+    border-color: var(--orange);
+    box-shadow: 0 0 20px rgba(255, 179, 107, 0.5);
+}
+
+/* COMMISSION BUTTON */
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: var(--pink);
+    border-radius: 4rem;
     font-size: 1.6rem;
     color: var(--text);
-}
-
-/* =================================
-   ART GALLERY
-================================= */
-
-.gallery {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2rem;
-}
-
-.art-card {
-    width: 100%;
-    min-width: 0;
-    background: white;
-    border: 2px solid var(--light-pink);
-    border-radius: 2rem;
-    overflow: hidden;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    border: 2px solid var(--pink);
     transition: 0.3s ease;
-    box-shadow: 0 5px 15px rgba(244, 166, 193, 0.15);
+    cursor: pointer;
 }
 
-.art-card:hover {
-    transform: translateY(-8px);
-}
-
-.art-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-    display: block;
-    background: #FFF9F4;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.art-info {
-    padding: 2rem;
-    text-align: center;
-}
-
-.art-info h3 {
-    font-size: 2rem;
-    color: var(--dark-pink);
-}
-
-.art-info p {
-    font-size: 1.4rem;
-    margin-top: 0.5rem;
-}
-
-/* =================================
-   COMMISSION GRID
-================================= */
-
-.commission-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 3rem;
-    align-items: start;
-}
-
-.commission-page .price-card {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-    background: white;
-    border: 2px solid var(--light-pink);
-    border-radius: 2rem;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(244, 166, 193, 0.15);
-    transition: 0.3s ease;
-}
-
-.commission-page .price-card:hover {
-    transform: translateY(-8px);
-}
-
-/* COMMISSION IMAGES */
-
-.commission-page .price-card img {
-    width: 120px !important;
-    height: 120px !important;
-    object-fit: contain !important;
-    display: block;
-    margin: 15px auto;
-    padding: 0;
-    background: #FFF9F4;
-}
-
-.price-info {
-    padding: 2.5rem 2rem;
-}
-
-.price-info h2 {
-    font-size: 2.5rem;
-    color: var(--dark-pink);
-}
-
-.price-info p {
-    font-size: 1.4rem;
-    margin: 1rem 0;
-}
-
-.price-info h3 {
-    font-size: 3rem;
-    color: var(--orange);
-    margin: 1.5rem 0;
-}
-
-.price-info .btn {
-    margin-top: 1rem;
-}
-
-/* =================================
-   COMMISSION GUIDELINES
-================================= */
-
-.commission-guidelines {
-    margin-top: 5rem;
-    padding: 3rem;
-    background: var(--light-pink);
-    border-radius: 2rem;
-}
-
-.commission-guidelines h2 {
-    font-size: 2.5rem;
-    color: var(--dark-pink);
-    margin-bottom: 2rem;
-}
-
-.commission-guidelines ul {
-    padding-left: 2.5rem;
-}
-
-.commission-guidelines li {
-    font-size: 1.5rem;
-    line-height: 2.5;
+.btn:hover {
+    transform: scale(1.03);
+    background-color: var(--orange);
+    border-color: var(--orange);
     color: var(--text);
+    box-shadow: 0 0 20px rgba(255, 179, 107, 0.5);
 }
 
-/* =================================
-   GALLERY FOOTER
-================================= */
+/* RESPONSIVE DESIGN */
 
-.gallery-footer {
-    margin-top: 6rem;
-    padding: 4rem 2rem;
-    background: var(--light-pink);
-    border-radius: 2rem;
-    text-align: center;
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
 }
-
-.gallery-footer h2 {
-    font-size: 2.5rem;
-    color: var(--dark-pink);
-    margin-bottom: 1rem;
-}
-
-.gallery-footer p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-/* =================================
-   TABLET RESPONSIVENESS
-================================= */
 
 @media (max-width: 995px) {
 
-    .page-container {
-        padding: 12rem 5% 4rem;
+    #menu-icon {
+        display: block;
     }
 
-    .page-heading h1 {
-        font-size: 3.5rem;
+    nav {
+        position: absolute;
+        display: none;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid var(--pink);
+        border-bottom: 3px solid var(--orange);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem;
+        background-color: var(--light-pink);
     }
 
-    .gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    nav.active {
+        display: block;
     }
 
-    .commission-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
     }
 
-}
-
-/* =================================
-   MOBILE RESPONSIVENESS
-================================= */
-
-@media (max-width: 600px) {
-
-    .page-container,
-    .commission-page .page-container {
-        padding: 11rem 5% 3rem;
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--orange);
     }
 
-    .page-heading h1 {
-        font-size: 3rem;
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+        text-align: center;
     }
 
-    .page-heading p {
-        font-size: 1.4rem;
+    .home-content h1 {
+        font-size: 5rem;
     }
 
-    .gallery {
-        max-width: 350px;
-        grid-template-columns: 1fr;
+    .home-content h3 {
+        font-size: 2.5rem;
     }
 
-    .art-card img {
-        height: 180px;
-    }
-
-    .commission-page .price-card img {
-    width: 120px !important;
-    height: 120px !important;
-    object-fit: contain !important;
-    display: block !important;
-    margin: 15px auto !important;
-    border: 3px solid red !important;
-}
-
-    .art-info {
-        padding: 1.5rem;
-    }
-
-    .commission-guidelines {
-        padding: 2rem;
-    }
-
-    .gallery-footer {
-        padding: 3rem 1.5rem;
+    .home-img img {
+        width: 70vw;
+        margin-top: 1rem;
     }
 }
