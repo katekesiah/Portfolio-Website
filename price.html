@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <title>Commission Pricelist | Kate Kesiah</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body.page-body {
+        background: #FFF9F4 !important;
+        background-image: none !important;
+        color: #49353A;
+        min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+        width: 100%;
+        padding: 20px 9%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #FFF9F4;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    header .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #D9789C;
+        text-decoration: none;
+    }
+
+    header nav {
+        display: flex;
+        gap: 35px;
+    }
+
+    header nav a {
+        color: #49353A;
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+
+    header nav a:hover,
+    header nav a.active {
+        color: #D9789C;
+        border-bottom: 2px solid #FFB36B;
+        padding-bottom: 5px;
+    }
+
+    #menu-icon {
+        display: none;
+        font-size: 2rem;
+        color: #D9789C;
+        cursor: pointer;
+    }
+
+    /* MAIN CONTAINER */
+    .commission-page .page-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 60px 30px;
+    }
+
+    /* HEADING */
+    .commission-page .page-heading {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .commission-page .page-heading h1 {
+        font-size: 3.5rem;
+        color: #49353A;
+        margin-bottom: 15px;
+    }
+
+    .commission-page .page-heading h1 span {
+        color: #D9789C;
+    }
+
+    .commission-page .page-heading p {
+        font-size: 1.5rem;
+    }
+
+    /* COMMISSION GRID */
+    .commission-page .commission-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+        align-items: start;
+    }
+
+    /* PRICE CARDS */
+    .commission-page .price-card {
+        width: 100%;
+        max-width: 450px;
+        margin: auto;
+        background: white;
+        border: 2px solid #FCE4EC;
+        border-radius: 20px;
+        overflow: hidden;
+        text-align: center;
+        padding-bottom: 25px;
+        box-shadow: 0 5px 15px rgba(244,166,193,0.15);
+        transition: 0.3s;
+    }
+
+    .commission-page .price-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .commission-page .price-card img {
+        width: 180px !important;
+        height: 180px !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 25px auto 15px !important;
+        padding: 0 !important;
+        background: #FFF9F4;
+    }
+
+    /* PRICE INFORMATION */
+    .commission-page .price-info {
+        padding: 15px 20px;
+    }
+
+    .commission-page .price-info h2 {
+        font-size: 2rem;
+        color: #D9789C;
+    }
+
+    .commission-page .price-info p {
+        font-size: 1.4rem;
+        margin: 10px 0;
+    }
+
+    .commission-page .price-info h3 {
+        font-size: 2.5rem;
+        color: #FFB36B;
+        margin: 15px 0;
+    }
+
+    .commission-page .price-info .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #F4A6C1;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .commission-page .price-info .btn:hover {
+        background: #D9789C;
+    }
+
+    /* GUIDELINES */
+    .commission-page .commission-guidelines {
+        margin-top: 50px;
+        padding: 30px;
+        background: #FCE4EC;
+        border-radius: 20px;
+    }
+
+    .commission-page .commission-guidelines h2 {
+        font-size: 2rem;
+        color: #D9789C;
+        margin-bottom: 20px;
+    }
+
+    .commission-page .commission-guidelines ul {
+        padding-left: 25px;
+    }
+
+    .commission-page .commission-guidelines li {
+        font-size: 1.3rem;
+        line-height: 2;
+    }
+
+    /* FOOTER */
+    .commission-page .gallery-footer {
+        margin-top: 50px;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .commission-page .gallery-footer h2 {
+        color: #D9789C;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .commission-page .gallery-footer p {
+        font-size: 1.3rem;
+    }
+
+    /* TABLET */
+    @media (max-width: 995px) {
+        .commission-page .commission-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        header {
+            padding: 20px 5%;
+        }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+        #menu-icon {
+            display: block;
+        }
+
+        header nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 5%;
+            width: 220px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        header nav.active {
+            display: flex;
+        }
+
+        .commission-page .commission-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .commission-page .page-heading h1 {
+            font-size: 2.5rem;
+        }
+
+        .commission-page .price-card img {
+            width: 160px !important;
+            height: 160px !important;
+        }
+
+        .commission-page .page-container {
+            padding: 40px 20px;
+        }
+    }
+</style>
+
+</head>
+
+<body class="page-body commission-page">
+<center>
+    <header>
+        <a href="../index.html" class="logo">Kate Kesiah</a>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="price.html" class="active">Commission Pricelist</a>
+            <a href="../samples/samples.html">Art Samples</a>
+        </nav>
+
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+    </header>
+
+    <main class="page-container">
+
+        <div class="page-heading">
+            <h1>Commission <span>Pricelist</span> ♡</h1>
+            <p>Let's bring your ideas to life! Choose your preferred art style.</p>
+        </div>
+
+        <div class="commission-grid">
+
+            <div class="price-card">
+                <img src="head.jpg" alt="Headshot sample">
+
+                <div class="price-info">
+                    <h2>HEADSHOT</h2>
+                    <p>Headshot illustration</p>
+                    <h3>₱500</h3>
+                    <a href="#" class="btn">ORDER NOW</a>
+                </div>
+            </div>
+
+            <div class="price-card">
+                <img src="half.jpg" alt="Half body sample">
+
+                <div class="price-info">
+                    <h2>HALF</h2>
+                    <p>Half Body Illustration</p>
+                    <h3>₱1000</h3>
+                    <a href="#" class="btn">ORDER NOW</a>
+                </div>
+            </div>
+
+            <div class="price-card">
+                <img src="knee.jpg" alt="Knee illustration sample">
+
+                <div class="price-info">
+                    <h2>KNEE</h2>
+                    <p>Knee Illustration</p>
+                    <h3>₱1500</h3>
+                    <a href="#" class="btn">ORDER NOW</a>
+                </div>
+            </div>
+
+            <div class="price-card">
+                <img src="full.jpg" alt="Full body sample">
+
+                <div class="price-info">
+                    <h2>FULL</h2>
+                    <p>Full Body Illustration</p>
+                    <h3>₱2000</h3>
+                    <a href="#" class="btn">ORDER NOW</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="commission-guidelines">
+
+            <h2>COMMISSION GUIDELINES ♡</h2>
+
+            <ul>
+                <li>Please provide clear references and descriptions.</li>
+                <li>Additional details may have extra charges.</li>
+                <li>Wait for confirmation before sending payment.</li>
+                <li>Be respectful and patient during the process.</li>
+            </ul>
+
+        </div>
+
+        <div class="gallery-footer">
+            <h2>Thank you for supporting my art! ♡</h2>
+            <p>Every commission means a lot to me.</p>
+        </div>
+
+    </main>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const nav = document.querySelector('nav');
+
+        menuIcon.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-xmark');
+        });
+    </script>
+</center>
+</body>
+</html>
